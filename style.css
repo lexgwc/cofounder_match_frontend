@@ -26,7 +26,6 @@ label {
 input[type="radio"], select {
   margin-bottom: 20px;
   margin-top: 5px;
-  width: 100%;
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -46,6 +45,22 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #004494;
 }
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.radio-group {
+  margin-top: 15px;
+  display: inline-block; /* Adjusted for closer alignment */
+  margin-right: 20px; /* Adds some space between the 'Yes' and 'No' options */
+}
+
+.radio-label {
+  margin-left: 5px; 
+  font-weight: normal;
+  display: inline; 
+
 
 #cofounder-list ul {
   list-style-type: none;

@@ -9,42 +9,54 @@
 </head>
 <body>
     <h1>Cofounder connect</h1>
-    <h2>Search Cofounders</h2>
-    <!-- // change addMovie -->
     <form action="/profile" method="get">
-        <label for="school">School:</label><br>
-        <select id="school" name="school">
-            <option value="">Select School</option>
-            <!-- Populate with actual options -->
-        </select><br>
-    
-        <label for="technical">Technical:</label><br>
-        <input type="radio" id="technicalYes" name="isTechnical" value="yes">
+        <div class="form-group">
+            <label for="school">School:</label>
+            <select id="school" name="school">
+                <option value="">Select School</option>
+                <!-- Populate with actual options -->
+            </select>
+        </div>
 
-        <label for="technicalYes">Yes</label><br>
-        <input type="radio" id="technicalNo" name="isTechnical" value="no">
-        <label for="technicalNo">No</label><br>
-    
-        <label for="industryInterests">Industry Interests:</label><br>
-        <select id="industry" name="industry">
-            <option value="">Select Industry</option>
-            <!-- Populate with actual options -->
-        </select><br>
+        <div class="form-group">
+            <label>Technical:</label>
+            <div class="radio-group">
+                <input type="radio" id="technicalYes" name="isTechnical" value="yes">
+                <label for="technicalYes" class="radio-label">Yes</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" id="technicalNo" name="isTechnical" value="no">
+                <label for="technicalNo" class="radio-label">No</label>
+            </div>
+        </div>
 
-        <label for="timeline">Timeline:</label><br>
-        <select id="timeline" name="timeline">
-            <option value="">Select Timeline</option>
-            <!-- Populate with actual options -->
-        </select><br>
+        <div class="form-group">
+            <label for="industryInterests">Industry Interests:</label>
+            <select id="industry" name="industry">
+                <option value="">Select Industry</option>
+                <!-- Populate with actual options -->
+            </select>
+        </div>
 
-        <label for="responsibilities">Responsibilities:</label><br>
-        <select id="responsibilities" name="responsibilities">
-            <option value="">Select Responsibilities</option>
-            <!-- Populate with actual options -->
-        </select><br>
+        <div class="form-group">
+            <label for="timeline">Timeline:</label>
+            <select id="timeline" name="timeline">
+                <option value="">Select Timeline</option>
+                <!-- Populate with actual options -->
+            </select>
+        </div>
 
-    
-        <input type="submit" value="Search Cofounders">
+        <div class="form-group">
+            <label for="responsibilities">Responsibilities:</label>
+            <select id="responsibilities" name="responsibilities">
+                <option value="">Select Responsibilities</option>
+                <!-- Populate with actual options -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Search Cofounders">
+        </div>
     </form>
     <div id="cofounder-list">
         <ul></ul>
