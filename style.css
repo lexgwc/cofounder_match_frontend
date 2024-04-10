@@ -10,10 +10,30 @@
   height: 100vh;
 }
 
-.Title { 
+.Title {
   grid-area: Title; 
   position: sticky;
+  display: flex;
+  justify-content: space-between; /* Aligns items to the main axis */
+  align-items: center; /* Aligns items to the cross axis */
+  flex-wrap: wrap; /* Allows items to wrap if needed */
 }
+
+.Title h1 {
+  margin: 0; /* Removes default margin */
+}
+
+.Title nav a {
+  text-decoration: none;
+  color: #0056b3;
+  margin-left: 20px; /* Adds space between links */
+  font-size: 18px;
+}
+
+.Title nav a:hover {
+  text-decoration: underline;
+}
+
 
 .Filters {
   grid-area: Filters;

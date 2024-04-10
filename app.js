@@ -143,7 +143,7 @@ async function findCofounders() {
         li.style.marginBottom = "10px";
         li.style.listStyleType = "none";
         li.style.borderRadius = "5px";
-        li.style.backgroundColor = "#f9f9f9";
+        li.style.backgroundColor = "white";
     
         // Assuming cofounder object follows the schema structure provided
         // Name and basic info
