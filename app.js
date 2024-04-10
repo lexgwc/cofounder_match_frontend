@@ -123,7 +123,8 @@ async function findCofounders() {
       industryInterests: formData.get('industry'),
       timelineForFulltime: formData.get('timeline'),
       areasOfResponsibility: formData.get('responsibilities'),
-      hasIdea: formData.get('idea')
+      hasIdea: formData.get('idea'),
+      isTechnical: formData.get('isTechnical')
   };
   console.log('Form data:', data);
   try {
