@@ -100,24 +100,32 @@ async function fetchIdeas() {
   try {
       const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/idea');
       const ideas = response.data;
-      // Process the fetched ideas data here
+      const ideaSelect = document.getElementById('idea');
+      ideas.forEach(idea => {
+          const option = document.createElement('option');
+          option.value = idea; // Assuming the array consists of string values
+          option.textContent = idea;
+          ideaSelect.appendChild(option);
+      });
       console.log('Fetched ideas:', ideas);
   } catch (error) {
       console.error('There was a problem fetching the ideas:', error);
   }
 }
 
+
 // write function to find cofounders using get request from backend based on the form data
 
 async function findCofounders() {
   const formData = new FormData(document.querySelector('form'));
   const data = {
-      school: formData.get('school'),
-      industry: formData.get('industry'),
-      timeline: formData.get('timeline'),
-      responsibilities: formData.get('responsibilities'),
-      idea: formData.get('idea')
+      currentSchool: formData.get('school'),
+      industryInterests: formData.get('industry'),
+      timelineForFulltime: formData.get('timeline'),
+      areasOfResponsibility: formData.get('responsibilities'),
+      hasIdea: formData.get('idea')
   };
+  console.log('Form data:', data);
   try {
       const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/profile', { params: data });
       const cofounders = response.data;
