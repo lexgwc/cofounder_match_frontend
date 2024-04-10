@@ -58,27 +58,40 @@ async function fetchIndustryInterests() {
 // fetch timelines from backend
 
 async function fetchTimelines() {
-    try {
-        const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/timeline');
-        const timelines = response.data;
-        // Process the fetched timelines data here
-        console.log('Fetched timelines:', timelines);
-    } catch (error) {
-        console.error('There was a problem fetching the timelines:', error);
-    }
+  try {
+      const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/timeline');
+      const timelines = response.data;
+      const timelineSelect = document.getElementById('timeline');
+      timelines.forEach(timeline => {
+          const option = document.createElement('option');
+          option.value = timeline; // Assuming the array consists of string values
+          option.textContent = timeline;
+          timelineSelect.appendChild(option);
+      });
+      console.log('Fetched timelines:', timelines);
+  } catch (error) {
+      console.error('There was a problem fetching the timelines:', error);
+  }
 }
+
 
 // fetch responsibilities from backend
 
 async function fetchResponsibilities() {
-    try {
-        const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/responsibilities');
-        const responsibilities = response.data;
-        // Process the fetched responsibilities data here
-        console.log('Fetched responsibilities:', responsibilities);
-    } catch (error) {
-        console.error('There was a problem fetching the responsibilities:', error);
-    }
+  try {
+      const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/responsibilities');
+      const responsibilities = response.data;
+      const responsibilitySelect = document.getElementById('responsibilities');
+      responsibilities.forEach(responsibility => {
+          const option = document.createElement('option');
+          option.value = responsibility; // Assuming the array consists of string values
+          option.textContent = responsibility;
+          responsibilitySelect.appendChild(option);
+      });
+      console.log('Fetched responsibilities:', responsibilities);
+  } catch (error) {
+      console.error('There was a problem fetching the responsibilities:', error);
+  }
 }
 
 // fetch ideas from backend
