@@ -135,11 +135,44 @@ async function findCofounders() {
       
       // Append new cofounders to the list
       cofounders.forEach(cofounder => {
-          const li = document.createElement('li');
-          // Assuming cofounder object has 'name' property. Adjust according to actual data structure.
-          li.textContent = cofounder.name; // Adjust this line to match the content structure of your cofounder objects
-          cofounderList.appendChild(li);
-      });
+        const li = document.createElement('li');
+        li.style.padding = "10px";
+        li.style.border = "1px solid #ddd";
+        li.style.marginBottom = "10px";
+        li.style.listStyleType = "none";
+    
+        // Assuming cofounder object follows the schema structure provided
+        // Name and basic info
+        const name = document.createElement('h3');
+        name.textContent = cofounder.name;
+        li.appendChild(name);
+    
+        // Other details
+        const details = document.createElement('p');
+        details.innerHTML = `
+            <strong>Birthdate:</strong> ${new Date(cofounder.birthdate).toLocaleDateString()}<br>
+            <strong>Program Type:</strong> ${cofounder.programType}<br>
+            <strong>Industry Interests:</strong> ${cofounder.industryInterests.join(', ')}<br>
+            <strong>Is Technical:</strong> ${cofounder.isTechnical ? 'Yes' : 'No'}<br>
+            <strong>LinkedIn:</strong> <a href="${cofounder.linkedinURL}" target="_blank">${cofounder.linkedinURL}</a><br>
+            <strong>Email:</strong> ${cofounder.email}<br>
+            <strong>Location:</strong> ${cofounder.location}<br>
+            <strong>About Me:</strong> ${cofounder.aboutMe}<br>
+            <strong>Education:</strong> ${cofounder.education}<br>
+            <strong>Employment History:</strong> ${cofounder.employmentHistory}<br>
+            <strong>Gender:</strong> ${cofounder.gender}<br>
+            <strong>Scheduling URL:</strong> <a href="${cofounder.schedulingURL}" target="_blank">${cofounder.schedulingURL}</a><br>
+            <strong>Has Idea:</strong> ${cofounder.hasIdea}<br>
+            <strong>Ideas Interested In:</strong> ${cofounder.ideasInterestedIn}<br>
+            <strong>Areas Of Responsibility:</strong> ${cofounder.areasOfResponsibility.join(', ')}<br>
+            <strong>Timeline For Fulltime:</strong> ${cofounder.timelineForFulltime}<br>
+            <strong>Cofounder Desired Qualities:</strong> ${cofounder.cofounderDesiredQualities}<br>
+            <strong>Impressive Accomplishment:</strong> ${cofounder.impressiveAccomplishment}
+        `;
+        li.appendChild(details);
+    
+        cofounderList.appendChild(li);
+    })
 
       console.log('Fetched cofounders:', cofounders);
   } catch (error) {
