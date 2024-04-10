@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cofounder connect</h1>
+    <h2>Search Cofounders</h2>
+    <!-- // change addMovie -->
+    <form action="/add-movie" method="get"> 
+        <label for="school">School:</label><br>
+        <input type="text" id="school" name="school" required><br>
+        
+        <!-- //turn this into a radio button to check/uncheck -->
+        <label for="technical">Technical:</label><br>
+        <input type="boolean" id="isTechnical" name="isTechnical" required><br>
+
+        <label for="industryInterests">Industry Interests:</label><br>
+        <input type="boolean" id="industryInterests" name="industryInterests" required><br>
+        
+        <input type="submit" value="Search Cofounders">
+    </form>
+    <div id="cofounder-list">
+        <ul></ul>
+    </div>
+</body>
+</html>
