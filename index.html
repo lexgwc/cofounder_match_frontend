@@ -11,17 +11,25 @@
     <h1>Cofounder connect</h1>
     <h2>Search Cofounders</h2>
     <!-- // change addMovie -->
-    <form action="/add-movie" method="get"> 
+    <form action="/profile" method="get">
         <label for="school">School:</label><br>
-        <select id="school" name="school" required><br>
-        
-        <!-- //turn this into a radio button to check/uncheck -->
+        <select id="school" name="school">
+            <option value="">Select School</option>
+            <!-- Populate with actual options -->
+        </select><br>
+    
         <label for="technical">Technical:</label><br>
-        <select id="isTechnical" name="isTechnical" required><br>
-
+        <input type="radio" id="technicalYes" name="isTechnical" value="yes">
+        <label for="technicalYes">Yes</label><br>
+        <input type="radio" id="technicalNo" name="isTechnical" value="no">
+        <label for="technicalNo">No</label><br>
+    
         <label for="industryInterests">Industry Interests:</label><br>
-        <select id="industryInterests" name="industryInterests" required><br>
-        
+        <select id="industry" name="industry">
+            <option value="">Select Industry</option>
+            <!-- Populate with actual options -->
+        </select><br>
+    
         <input type="submit" value="Search Cofounders">
     </form>
     <div id="cofounder-list">
