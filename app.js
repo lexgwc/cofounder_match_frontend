@@ -143,17 +143,19 @@ async function findCofounders() {
         li.style.marginBottom = "10px";
         li.style.listStyleType = "none";
         li.style.borderRadius = "5px";
-        li.style.boxShadow = "0 4px 8px 0 rgba(0,0,0,0.2)";
         li.style.backgroundColor = "#f9f9f9";
     
         // Assuming cofounder object follows the schema structure provided
         // Name and basic info
         const name = document.createElement('h3');
         name.textContent = cofounder.name;
+        name.style.padding = "20px";
+        name.style.margin = "0px";
         li.appendChild(name);
     
         // Other details
         const details = document.createElement('p');
+        details.classList.add('profile-detail');
         details.innerHTML = `
             <strong>Birthdate:</strong> ${new Date(cofounder.birthdate).toLocaleDateString()}<br>
             <strong>Program Type:</strong> ${cofounder.programType}<br>

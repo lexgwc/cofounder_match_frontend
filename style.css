@@ -76,6 +76,12 @@ input[type="submit"]:hover {
   background-color: #004494;
 }
 
+.profile-detail {
+  line-height: 23px;
+  font-size: 14px;
+  margin: 0 20px 20px 20px;
+}
+
 .form-group {
   margin-bottom: 20px;
 }
