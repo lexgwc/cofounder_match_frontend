@@ -1,3 +1,20 @@
+.container {  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  grid-template-rows: 0.3fr 1.7fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Title Title Title"
+    "Filters Profiles Profiles"
+    "Filters Profiles Profiles";
+}
+
+.Title { grid-area: Title; }
+
+.Filters { grid-area: Filters; }
+
+.Profiles { grid-area: Profiles; }
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;

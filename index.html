@@ -8,68 +8,77 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Cofounder connect</h1>
-    <form action="/profile" method="get">
-        <div class="form-group">
-            <label for="school">School:</label>
-            <select id="school" name="school">
-                <option value="">Select School</option>
-                <!-- Populate with actual options -->
-            </select>
-        </div>
 
-        <div class="form-group">
-            <label>Technical:</label>
-            <div class="radio-group">
-                <input type="radio" id="technicalYes" name="isTechnical" value="yes">
-                <label for="technicalYes" class="radio-label">Yes</label>
+    <div class="container">
+        <div class="Title">
+            <h1>Cofounder connect</h1>
+        </div>
+        <div class="Filters">
+            <form action="/profile" method="get">
+                <div class="form-group">
+                    <label for="school">School:</label>
+                    <select id="school" name="school">
+                        <option value="">Select School</option>
+                        <!-- Populate with actual options -->
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label>Technical:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="technicalYes" name="isTechnical" value="yes">
+                        <label for="technicalYes" class="radio-label">Yes</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="technicalNo" name="isTechnical" value="no">
+                        <label for="technicalNo" class="radio-label">No</label>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <label for="industryInterests">Industry Interests:</label>
+                    <select id="industry" name="industry">
+                        <option value="">Select Industry</option>
+                        <!-- Populate with actual options -->
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label for="timeline">Timeline:</label>
+                    <select id="timeline" name="timeline">
+                        <option value="">Select Timeline</option>
+                        <!-- Populate with actual options -->
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label for="responsibilities">Responsibilities:</label>
+                    <select id="responsibilities" name="responsibilities">
+                        <option value="">Select Responsibilities</option>
+                        <!-- Populate with actual options -->
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label for="idea">Has idea:</label>
+                    <select id="idea" name="idea">
+                        <option value="">Select idea status</option>
+                        <!-- Populate with actual options -->
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <input type="submit" value="Search Cofounders">
+                </div>
+            </form>
+        </div>
+        <div class="Profiles">
+            <div id="cofounder-list">
+                <ul></ul>
             </div>
-            <div class="radio-group">
-                <input type="radio" id="technicalNo" name="isTechnical" value="no">
-                <label for="technicalNo" class="radio-label">No</label>
-            </div>
         </div>
-
-        <div class="form-group">
-            <label for="industryInterests">Industry Interests:</label>
-            <select id="industry" name="industry">
-                <option value="">Select Industry</option>
-                <!-- Populate with actual options -->
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="timeline">Timeline:</label>
-            <select id="timeline" name="timeline">
-                <option value="">Select Timeline</option>
-                <!-- Populate with actual options -->
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="responsibilities">Responsibilities:</label>
-            <select id="responsibilities" name="responsibilities">
-                <option value="">Select Responsibilities</option>
-                <!-- Populate with actual options -->
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="idea">Has idea:</label>
-            <select id="idea" name="idea">
-                <option value="">Select idea status</option>
-                <!-- Populate with actual options -->
-            </select>
-        </div>
-
-
-
-        <div class="form-group">
-            <input type="submit" value="Search Cofounders">
-        </div>
-    </form>
-    <div id="cofounder-list">
-        <ul></ul>
     </div>
+
+    
 </body>
 </html>
