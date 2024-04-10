@@ -38,14 +38,20 @@ document.addEventListener('DOMContentLoaded', function() {
 // fetch industry interests from backend
 
 async function fetchIndustryInterests() {
-    try {
-        const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/industries');
-        const industryInterests = response.data;
-        // Process the fetched industry interests data here
-        console.log('Fetched industry interests:', industryInterests);
-    } catch (error) {
-        console.error('There was a problem fetching the industry interests:', error);
-    }
+  try {
+      const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/industries');
+      const industryInterests = response.data;
+      const industrySelect = document.getElementById('industry');
+      industryInterests.forEach(industry => {
+          const option = document.createElement('option');
+          option.value = industry; // Assuming the array consists of string values
+          option.textContent = industry;
+          industrySelect.appendChild(option);
+      });
+      console.log('Fetched industry interests:', industryInterests);
+  } catch (error) {
+      console.error('There was a problem fetching the industry interests:', error);
+  }
 }
 
 
