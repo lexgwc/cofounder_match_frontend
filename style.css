@@ -7,13 +7,26 @@
     "Title Title Title"
     "Filters Profiles Profiles"
     "Filters Profiles Profiles";
+  height: 100vh;
 }
 
-.Title { grid-area: Title; }
+.Title { 
+  grid-area: Title; 
+  position: sticky;
+}
 
-.Filters { grid-area: Filters; }
+.Filters {
+  grid-area: Filters;
+  position: sticky;
+  top: 0; /* Adjust as needed */
+  height: 100%;
+}
 
-.Profiles { grid-area: Profiles; }
+.Profiles {
+  grid-area: Profiles;
+  overflow-y: auto; /* Enables vertical scrolling */
+  max-height: 90vh; /* Example fixed height */
+}
 
 body {
   font-family: Arial, sans-serif;

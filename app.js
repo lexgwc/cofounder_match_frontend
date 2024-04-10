@@ -139,6 +139,7 @@ async function findCofounders() {
         const li = document.createElement('li');
         li.style.padding = "10px";
         li.style.border = "1px solid #ddd";
+        li.style.color = '#555';
         li.style.marginBottom = "10px";
         li.style.listStyleType = "none";
         li.style.borderRadius = "5px";
