@@ -12,6 +12,7 @@
 }
 
 .title {
+  margin: 10px 0 2px 0;
   grid-area: title; 
   background-color: white;
   position: sticky;
@@ -33,15 +34,19 @@
   text-decoration: underline;
 }
 
-
-.profile { 
+.profile {
   grid-area: profile; 
-  margin: 0 20px 0 20px; 
-  overflow-y: auto; /* Enables vertical scrolling */
-  max-height: 90vh; /* Example fixed height */
-  line-height: 23px;
   font-size: 14px;
-  margin: 0 20px 20px 20px;
+  margin: 20px 20px 0 20px; 
+  width: 80%;
+  justify-self: center;
+  max-height: 90vh;
+  line-height: 23px;
+  background-color: #fff; /* Change to white for clarity */
+  padding: 20px; /* Add padding around the profile content */
+  border-radius: 10px; /* Optional: rounded corners for the profile container */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Add shadow for depth */
+  overflow-y: auto;
 }
 
 body {
