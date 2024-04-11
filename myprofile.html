@@ -7,12 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./myprofile.js"></script>
-    <link rel="stylesheet" href="login-signup.css">
+    <link rel="stylesheet" href="myprofile.css">
 </head>
 <body>
-    <div id="profile-container">
-        <h1>My Profile</h1>
-        <div id="profile-info"></div>
+
+    <div class="container">
+        <div class="title">
+            <img src="./assets/logo-name-slogan.png" alt="CofounderConnectr" style="height: 60px; margin: 30px">
+            <nav>
+                <a href="/homepage.html" style="margin-right: 20px;">Browse Profiles</a>
+                <a href="/myprofile.html" style="margin-right: 20px;">My Profile</a>
+                <a href="/favorites">Favorites</a>
+            </nav>
+        </div>
+        <div class="profile">
+            <div id="profile-container">
+                <div id="profile-info"></div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
