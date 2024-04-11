@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async (event) => { // Make the fun
     const response = await axios.get(`https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/profile`, config);
     const profile = response.data;
     console.log(profile);
-    if (profile.length=0) {
+    if (profile.length > 0) {
       displayProfile(profile);
     } else {
       displayNoProfileMessage();
