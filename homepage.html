@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./homepage.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="Title">
+            <h1>Campus Connections</h1>
+            <h5>Find Cofounders and Coffee Chats</h1>
+            <nav>
+                <a href="/my-profile" style="margin-right: 20px;">My Profile</a>
+                <a href="/favorites">Favorites</a>
+            </nav>
+        </div>
+        <div class="Filters">
+            <form action="/profile" method="get">
+                <div class="form-group">
+                    <label for="school">School:</label>
+                    <select id="school" name="school">
+                        <option value="">Select School</option>
+                        <!-- Populate with actual options -->
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label>Technical:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="technicalYes" name="isTechnical" value="yes">
+                        <label for="technicalYes" class="radio-label">Yes</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="technicalNo" name="isTechnical" value="no">
+                        <label for="technicalNo" class="radio-label">No</label>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <label for="industryInterests">Industry Interests:</label>
+                    <select id="industry" name="industry">
+                        <option value="">Select Industry</option>
+                        <!-- Populate with actual options -->
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label for="timeline">Timeline:</label>
+                    <select id="timeline" name="timeline">
+                        <option value="">Select Timeline</option>
+                        <!-- Populate with actual options -->
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label for="responsibilities">Responsibilities:</label>
+                    <select id="responsibilities" name="responsibilities">
+                        <option value="">Select Responsibilities</option>
+                        <!-- Populate with actual options -->
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <label for="idea">Has idea:</label>
+                    <select id="idea" name="idea">
+                        <option value="">Select idea status</option>
+                        <!-- Populate with actual options -->
+                    </select>
+                </div>
+        
+                <div class="form-group">
+                    <input type="submit" value="Search Cofounders">
+                </div>
+            </form>
+        </div>
+        <div class="Profiles">
+            <div id="cofounder-list">
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

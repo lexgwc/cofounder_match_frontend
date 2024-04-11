@@ -127,8 +127,15 @@ async function findCofounders() {
       isTechnical: formData.get('isTechnical')
   };
   console.log('Form data:', data);
+
+  const token = localStorage.getItem('token');
+  if (!token) {
+    console.error('No token found');
+    return;
+  }
+
   try {
-      const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/profile', { params: data });
+      const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/profile',{ headers: { 'Authorization': `Bearer ${token}`}}, { params: data });
       const cofounders = response.data;
       // Clear existing cofounder list
       const cofounderList = document.getElementById('cofounder-list').querySelector('ul');
