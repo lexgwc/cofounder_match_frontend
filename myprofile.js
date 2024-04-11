@@ -42,8 +42,10 @@ function displayProfile(profile) {
   const myProfile = profile[0];
   console.log('Displaying profile:', profile);
   console.log(myProfile.ideasInterestedIn);
+
   const profileContainer = document.getElementById('profile-container')
   profileContainer.innerHTML = `
+  <h3 style="padding: 20px; margin: 0;">${myProfile.name}</h3>
   ${myProfile.aboutMe}<br>
   <br>
   <strong>LinkedIn:</strong> <a href="${myProfile.linkedinURL}" target="_blank">${myProfile.linkedinURL}</a><br>
