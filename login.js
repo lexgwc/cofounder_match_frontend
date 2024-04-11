@@ -1,4 +1,4 @@
-const deployLink = "https://cofounder-match-frontend.vercel.app/"
+// const deployLink = "https://cofounder-match-frontend.vercel.app/"
 
 document.addEventListener('DOMContentLoaded', (event) => {
   const form = document.querySelector('form');
@@ -16,7 +16,8 @@ function handleLogin(event) {
         // Store the token
         localStorage.setItem('token', token);
         // Redirect to homepage upon successful login
-        window.location.href = `${deployLink}homepage.html`;
+        // window.location.href = `${deployLink}homepage.html`;
+        window.location.href = `/homepage.html`;
       } else {
         alert('Login failed: No token received');
       }

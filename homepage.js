@@ -135,7 +135,11 @@ async function findCofounders() {
   }
 
   try {
-      const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/profile',{ headers: { 'Authorization': `Bearer ${token}`}}, { params: data });
+    const config = {
+            headers: { 'Authorization': `Bearer ${token}` },
+            params: data
+        }
+      const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/profile',config);
       const cofounders = response.data;
       // Clear existing cofounder list
       const cofounderList = document.getElementById('cofounder-list').querySelector('ul');
@@ -150,7 +154,7 @@ async function findCofounders() {
         li.style.color = '#555';
         li.style.marginBottom = "10px";
         li.style.listStyleType = "none";
-        li.style.borderRadius = "5px";
+        li.style.borderRadius = "8px";
         li.style.backgroundColor = "white";
     
         // Assuming cofounder object follows the schema structure provided
