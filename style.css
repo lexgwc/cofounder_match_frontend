@@ -12,6 +12,7 @@
 
 .Title {
   grid-area: Title; 
+  background-color: rgba(35,85,173);
   position: sticky;
   display: flex;
   justify-content: space-between; /* Aligns items to the main axis */
@@ -21,13 +22,19 @@
 
 .Title h1 {
   margin: 0; /* Removes default margin */
+  color: white;
+}
+
+.Title h5 {
+  margin: 0; /* Removes default margin */
+  color: white;
 }
 
 .Title nav a {
   text-decoration: none;
-  color: #0056b3;
+  color: white;
   margin-left: 20px; /* Adds space between links */
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .Title nav a:hover {
@@ -37,6 +44,7 @@
 
 .Filters {
   grid-area: Filters;
+  padding: 20px;
   position: sticky;
   top: 0; /* Adjust as needed */
   height: 100%;
@@ -44,14 +52,28 @@
 
 .Profiles {
   grid-area: Profiles;
+  padding: 20px;
   overflow-y: auto; /* Enables vertical scrolling */
   max-height: 90vh; /* Example fixed height */
 }
 
+.add-to-favorites {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff; /* Example color, adjust as needed */
+  color: white;
+  cursor: pointer;
+}
+
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px;
+  padding: 0px;
   background-color: #f4f4f4;
 }
 
@@ -124,6 +146,7 @@ input[type="submit"]:hover {
 }
 
 #cofounder-list ul li {
+  list-style-type: none;
   background-color: #fff;
   padding: 10px;
   margin-top: 5px;

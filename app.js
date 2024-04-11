@@ -137,6 +137,7 @@ async function findCofounders() {
       // Append new cofounders to the list
       cofounders.forEach(cofounder => {
         const li = document.createElement('li');
+        li.style.position = "relative";
         li.style.padding = "10px";
         li.style.border = "1px solid #ddd";
         li.style.color = '#555';
@@ -157,28 +158,44 @@ async function findCofounders() {
         const details = document.createElement('p');
         details.classList.add('profile-detail');
         details.innerHTML = `
-            <strong>Birthdate:</strong> ${new Date(cofounder.birthdate).toLocaleDateString()}<br>
+            ${cofounder.aboutMe}<br>
+            <br>
+            <strong>LinkedIn:</strong> <a href="${cofounder.linkedinURL}" target="_blank">${cofounder.linkedinURL}</a><br>
             <strong>Program Type:</strong> ${cofounder.programType}<br>
             <strong>Industry Interests:</strong> ${cofounder.industryInterests.join(', ')}<br>
             <strong>Is Technical:</strong> ${cofounder.isTechnical ? 'Yes' : 'No'}<br>
-            <strong>LinkedIn:</strong> <a href="${cofounder.linkedinURL}" target="_blank">${cofounder.linkedinURL}</a><br>
-            <strong>Email:</strong> ${cofounder.email}<br>
-            <strong>Location:</strong> ${cofounder.location}<br>
-            <strong>About Me:</strong> ${cofounder.aboutMe}<br>
-            <strong>Education:</strong> ${cofounder.education}<br>
-            <strong>Employment History:</strong> ${cofounder.employmentHistory}<br>
-            <strong>Gender:</strong> ${cofounder.gender}<br>
-            <strong>Scheduling URL:</strong> <a href="${cofounder.schedulingURL}" target="_blank">${cofounder.schedulingURL}</a><br>
+            <br>
+
+            <strong>Education:</strong><br>
+            ${cofounder.education}<br>
+            <strong>Employment History:</strong><br>
+            ${cofounder.employmentHistory}<br>
+            <strong>Impressive Accomplishment:</strong><br>
+            ${cofounder.impressiveAccomplishment}<br>
+            <br>
+
             <strong>Has Idea:</strong> ${cofounder.hasIdea}<br>
-            <strong>Ideas Interested In:</strong> ${cofounder.ideasInterestedIn}<br>
-            <strong>Areas Of Responsibility:</strong> ${cofounder.areasOfResponsibility.join(', ')}<br>
-            <strong>Timeline For Fulltime:</strong> ${cofounder.timelineForFulltime}<br>
-            <strong>Cofounder Desired Qualities:</strong> ${cofounder.cofounderDesiredQualities}<br>
-            <strong>Impressive Accomplishment:</strong> ${cofounder.impressiveAccomplishment}
+            <strong>Potential Ideas:</strong><br>
+            ${cofounder.ideasInterestedIn}<br>
+            <br>
+
+            <strong>My Ideal Cofounder:</strong> ${cofounder.cofounderDesiredQualities}<br>
+            <strong>Areas I Can Be Responsible For:</strong> ${cofounder.areasOfResponsibility.join(', ')}<br>
+            <strong>Timeline For Getting Started:</strong> ${cofounder.timelineForFulltime}<br>
+            <br>
+
+            <strong>Email:</strong> ${cofounder.email}<br>
+            <strong>Scheduling URL:</strong> <a href="${cofounder.schedulingURL}" target="_blank">${cofounder.schedulingURL}</a><br>
         `;
+            // <strong>Location:</strong> ${cofounder.location}<br>
+            // <strong>Gender:</strong> ${cofounder.gender}<br>
         li.appendChild(details);
     
         cofounderList.appendChild(li);
+        const favButton = document.createElement('button')
+        favButton.textContent = "Save to Favorites"
+        favButton.classList.add("add-to-favorites")
+        li.appendChild(favButton)
     })
 
       console.log('Fetched cofounders:', cofounders);
