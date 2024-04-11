@@ -45,7 +45,7 @@ input[type=email], input[type=password] {
 
 button[type=submit] {
   width: 100%;
-  background-color: #007bff;
+  background-color: #9885FE;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -55,5 +55,5 @@ button[type=submit] {
 }
 
 button[type=submit]:hover {
-  background-color: #0056b3;
+  background-color: #7465D9;
 }
