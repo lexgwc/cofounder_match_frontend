@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async (event) => { // Make the fun
     const response = await axios.get(`https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/profile`, config);
     const profile = response.data;
     console.log(profile);
-    if (profile) {
+    if (profile.length=0) {
       displayProfile(profile);
     } else {
       displayNoProfileMessage();
@@ -32,10 +32,21 @@ document.addEventListener('DOMContentLoaded', async (event) => { // Make the fun
 function displayNoProfileMessage() {
   console.log('No profile found. Create a profile?');
   const profileContainer = document.getElementById('profile-container');
-  profileContainer.innerHTML = `
-    <p>No profile found. Create a profile?</p>
-    <a href="/profile.html">Create Profile</a>
-  `;
+  // Ensure the container is cleared before adding new content
+  profileContainer.innerHTML = '';
+
+  const newProfileButton = document.createElement('button');
+  newProfileButton.textContent = 'Create Profile';
+  newProfileButton.style.padding = "10px 20px"; 
+  newProfileButton.style.marginTop = "20px"; 
+  newProfileButton.addEventListener('click', () => {
+    window.location.href = '/createprofile.html'; 
+  });
+  const noProfileMessage = document.createElement('p');
+  noProfileMessage.textContent = `Looks like you haven't created a profile yet. Want to get started on creating one?`;
+
+  profileContainer.appendChild(noProfileMessage);
+  profileContainer.appendChild(newProfileButton);
 }
 
 function displayProfile(profile) {
