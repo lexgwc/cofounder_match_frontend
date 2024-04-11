@@ -1,7 +1,7 @@
 
 .container {  
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.3fr 1.7fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
@@ -10,7 +10,7 @@
     "Filters Profiles Profiles"
     "Filters Profiles Profiles";
   height: 100vh;
-  background-color: lightgrey;
+  background-color: rgb(236, 235, 237);
   height: 100vh;
 }
 
@@ -83,7 +83,7 @@ form {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   max-width: 500px;
   margin: 16px 0;
-  max-height: 470px;
+  max-height: 500px;
   overflow-x: hidden;
 }
 
@@ -93,7 +93,7 @@ label {
 }
 
 input[type="radio"], select {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   margin-top: 5px;
   padding: 8px;
   border: 1px solid #ddd;
@@ -122,11 +122,11 @@ input[type="submit"]:hover {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .radio-group {
-  margin-top: 15px;
+  margin-top: 0px;
   display: inline-block; /* Adjusted for closer alignment */
   margin-right: 20px; /* Adds some space between the 'Yes' and 'No' options */
 }
