@@ -23,6 +23,8 @@
         <div class="profile">
             <div id="form-container">
               <h2>Create Profile</h2>
+              <p>Welcome! Let's get your profile set up. This information will be visible by others looking to connect with you on campus.</p>
+              <hr>
               <form action="/createprofile" method="post">
 
                 <label for="name">Name:</label>
@@ -49,13 +51,15 @@
                 <option value="Other">Other</option></select>
                 <br>
               
-                <label for="industryInterests">Industry Interests:</label>
-                <select id="industryInterests" name="industryInterests" multiple required>
-                  <option value="">Select Industry Interests</option>
+                <fieldset>
+                  <legend>Industry Interests:</legend>
+                  <label><input type="checkbox" name="industry" value="Tech"> Tech</label><br>
+                  <label><input type="checkbox" name="industry" value="Healthcare"> Healthcare</label><br>
+                  <label><input type="checkbox" name="industry" value="Finance"> Finance</label><br>
                   <!-- Add other options here -->
-                </select><br>
+                </fieldset><br>
               
-                <label>Is Technical:</label>
+                <label>Are You Technical?</label>
                 <input type="radio" id="isTechnicalYes" name="isTechnical" value="true" required> Yes
                 <input type="radio" id="isTechnicalNo" name="isTechnical" value="false"> No<br><br>
               
@@ -79,7 +83,7 @@
               
                 <!-- Additional fields like gender, schedulingURL, etc., can follow the same pattern -->
               
-                <label for="hasIdea">Has Idea:</label>
+                <label for="hasIdea">Do You Have A Business Idea Yet?:</label>
                 <select id="hasIdea" name="hasIdea" required>
                   <option value="Committed to an idea">Committed to an idea</option>
                   <!-- Add other options here -->
