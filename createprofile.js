@@ -13,7 +13,7 @@ async function fetchSchools() {
   try {
       const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/school');
       const schools = response.data;
-      const schoolSelect = document.getElementById('school');
+      const schoolSelect = document.getElementById('currentSchool');
       schools.forEach(school => {
           const option = document.createElement('option');
           option.value = school.schoolName; 
