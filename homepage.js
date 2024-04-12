@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // fetch schools from backend
   async function fetchSchools() {
     try {
-        const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/school');
+        const response = await axios.get('http://localhost:3000/cofounders/school');
         const schools = response.data;
         const schoolSelect = document.getElementById('school');
         schools.forEach(school => {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function fetchIndustryInterests() {
   try {
-      const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/industries');
+      const response = await axios.get('http://localhost:3000/cofounders/industries');
       const industryInterests = response.data;
       const industrySelect = document.getElementById('industry');
       industryInterests.forEach(industry => {
@@ -59,7 +59,7 @@ async function fetchIndustryInterests() {
 
 async function fetchTimelines() {
   try {
-      const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/timeline');
+      const response = await axios.get('http://localhost:3000/cofounders/timeline');
       const timelines = response.data;
       const timelineSelect = document.getElementById('timeline');
       timelines.forEach(timeline => {
@@ -79,7 +79,7 @@ async function fetchTimelines() {
 
 async function fetchResponsibilities() {
   try {
-      const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/responsibilities');
+      const response = await axios.get('http://localhost:3000/cofounders/responsibilities');
       const responsibilities = response.data;
       const responsibilitySelect = document.getElementById('responsibilities');
       responsibilities.forEach(responsibility => {
@@ -98,7 +98,7 @@ async function fetchResponsibilities() {
 
 async function fetchIdeas() {
   try {
-      const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/idea');
+      const response = await axios.get('http://localhost:3000/cofounders/idea');
       const ideas = response.data;
       const ideaSelect = document.getElementById('idea');
       ideas.forEach(idea => {
@@ -139,7 +139,7 @@ async function findCofounders() {
             headers: { 'Authorization': `Bearer ${token}` },
             params: data
         }
-      const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/profile',config);
+      const response = await axios.get('http://localhost:3000/cofounders/profile',config);
       const cofounders = response.data;
       // Clear existing cofounder list
       const cofounderList = document.getElementById('cofounder-list').querySelector('ul');

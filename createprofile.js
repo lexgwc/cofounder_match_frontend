@@ -5,13 +5,19 @@ document.addEventListener('DOMContentLoaded', function() {
   fetchTimelines()
   fetchResponsibilities()
   fetchIdeas()
+
+  document.querySelector('form').addEventListener('submit', function(event) {
+    console.log('button clicked')
+    event.preventDefault(); // Prevent the form from submitting the traditional way
+    createProfile();
+  })
 });
 
 
 // fetch schools from backend
 async function fetchSchools() {
   try {
-      const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/school');
+      const response = await axios.get('http://localhost:3000/cofounders/school');
       const schools = response.data;
       const schoolSelect = document.getElementById('currentSchool');
       schools.forEach(school => {
@@ -33,7 +39,7 @@ async function fetchSchools() {
 async function fetchIndustryInterests() {
     try {
         // Fetching the industry interests from the backend
-        const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/industries');
+        const response = await axios.get('http://localhost:3000/cofounders/industries');
         const industryInterests = response.data;
         
         // Getting the fieldset element by its ID
@@ -51,7 +57,7 @@ async function fetchIndustryInterests() {
             // Creating the checkbox input element
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
-            checkbox.name = 'industry';
+            checkbox.name = 'industryInterests';
             checkbox.value = industry;
             
             // Appending the checkbox to the label, then adding a line break, and finally appending the label to the fieldset
@@ -71,9 +77,9 @@ async function fetchIndustryInterests() {
 
 async function fetchTimelines() {
 try {
-    const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/timeline');
+    const response = await axios.get('http://localhost:3000/cofounders/timeline');
     const timelines = response.data;
-    const timelineSelect = document.getElementById('timeline');
+    const timelineSelect = document.getElementById('timelineForFulltime');
     timelines.forEach(timeline => {
         const option = document.createElement('option');
         option.value = timeline; // Assuming the array consists of string values
@@ -92,7 +98,7 @@ try {
 async function fetchResponsibilities() {
     try {
         // Fetching responsibilities from the backend
-        const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/responsibilities');
+        const response = await axios.get('http://localhost:3000/cofounders/responsibilities');
         const responsibilities = response.data;
         
         // Getting the fieldset element by its ID
@@ -106,7 +112,7 @@ async function fetchResponsibilities() {
             // Creating the checkbox input element
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
-            checkbox.name = 'responsibility';
+            checkbox.name = 'areasOfResponsibility';
             checkbox.value = responsibility;
 
             // Creating the label element and appending the checkbox and responsibility text to it
@@ -130,7 +136,7 @@ async function fetchResponsibilities() {
 
 async function fetchIdeas() {
 try {
-    const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/idea');
+    const response = await axios.get('http://localhost:3000/cofounders/idea');
     const ideas = response.data;
     const ideaSelect = document.getElementById('idea');
     ideas.forEach(idea => {
@@ -144,3 +150,41 @@ try {
     console.error('There was a problem fetching the ideas:', error);
 }
 }
+
+async function createProfile() {
+
+    const form = document.querySelector('form');
+    const formData = new FormData(form);
+
+    // get token from local storage
+    const token = localStorage.getItem('token');
+    console.log(`token: ${token}`);
+    const payload = JSON.parse(atob(token.split('.')[1])); // Decode payload of JWT
+    console.log(payload);
+    const userId = payload.id;
+    console.log(`Log userId: ${userId}`);
+    const config = {
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'multipart/form-data' // This line needs to be inside the headers object
+        }
+    }
+
+    //add current UserId to profile
+    formData.append('userId', userId);
+    for (let [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+    };
+    // Preparing the data for the POST request
+    // Note: FormData will be directly passed to axios, as axios handles FormData automatically
+    try {
+        // TODO: replace with heroku
+        const response = await axios.post('http://localhost:3000/cofounders/profile', formData, config);
+        console.log('Profile created successfully:', response.data);
+        alert('Profile created successfully!');
+    } catch (error) {
+        console.error('There was a problem creating the profile:', error);
+        alert('There was a problem creating the profile. Please try again later.');
+    }
+}
+
