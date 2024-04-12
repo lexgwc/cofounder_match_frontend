@@ -92,11 +92,18 @@ textarea {
 }
 
 fieldset {
-  line-height: 8px;
+  line-height: 3px;
   font-weight: bold;
   border: 1px solid #ddd;
   border-width: 1px;
   border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+fieldset label {
+  flex-basis: 50%; 
+  margin-top: 10px;
 }
 
 #name, #email, #location, select, input[type=date], input[type=url] {

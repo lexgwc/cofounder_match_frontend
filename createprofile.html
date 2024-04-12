@@ -30,11 +30,11 @@
               <hr>
               <form action="/createprofile" method="post">
 
-                <label for="name">Name:</label>
+                <label for="name">Full name:</label>
                 <input type="text" id="name" name="name" required><br>
                 <!-- Placeholder for userId, assuming it's handled programmatically or through session -->
-                <label for="school">School:</label>
-                <select id="school" name="school" required>
+                <label for="currentSchool">School:</label>
+                <select id="currentSchool" name="currentSchool" required>
                 <option value="">Select School</option></select><br>
                 
               
@@ -54,11 +54,8 @@
                 <option value="Other">Other</option></select>
                 <br>
               
-                <fieldset>
+                <fieldset id="industryFieldset">
                   <legend>Industry Interests:</legend>
-                  <label><input type="checkbox" name="industry" value="Tech"> Tech</label><br>
-                  <label><input type="checkbox" name="industry" value="Healthcare"> Healthcare</label><br>
-                  <label><input type="checkbox" name="industry" value="Finance"> Finance</label>
                   <!-- Add other options here -->
                 </fieldset><br>
               
@@ -68,6 +65,9 @@
               
                 <label for="linkedinURL">LinkedIn URL:</label>
                 <input type="url" id="linkedinURL" name="linkedinURL"><br>
+
+                <label for="schedulingURL">Scheduling URL:</label>
+                <input type="url" id="schedulingURL" name="schedulingURL"><br>
               
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required><br>
@@ -92,32 +92,30 @@
                 Bain & Company, Associate Consultant, 2019 - 2021
                 Bain & Company, Associate Consultant Intern, 2018 - 2019" required></textarea><br>
 
-                <label for="cofounderQualities">What are you looking for in a cofounder?</label>
-                <textarea id="cofounderQualities" name="cofounderQualities" required></textarea><br>
+                <label for="cofounderDesiredQualities">What are you looking for in a cofounder?</label>
+                <textarea id="cofounderDesiredQualities" name="cofounderDesiredQualities" required></textarea><br>
 
                 <label for="impressiveAccomplishment">Brag about an impressive accomplishment!</label>
                 <textarea id="impressiveAccomplishment" name="impressiveAccomplishment" required></textarea><br>
               
-                <!-- Additional fields like gender, schedulingURL, etc., can follow the same pattern -->
-              
-                <label for="hasIdea">Do You Have A Business Idea Yet?:</label>
-                <select id="hasIdea" name="hasIdea" required>
-                  <option value="Committed to an idea">Committed to an idea</option>
+                <label for="idea">Do You Have A Business Idea Yet?:</label>
+                <select id="idea" name="idea" required>
+                  <option value="">Select idea status</option>
                   <!-- Add other options here -->
                 </select><br>
 
-                <label for="idea">Share a bit about the business ideas you're thinking of:</label>
-                <textarea id="idea" name="idea" required></textarea><br>
+                <label for="ideasInterestedIn">Share a bit about the business ideas you're thinking of:</label>
+                <textarea id="ideasInterestedIn" name="ideasInterestedIn" required></textarea><br>
 
-                <fieldset>
+                <fieldset id="responsibilitiesFieldset">
                   <legend>Areas you can be responsible for in a business:</legend>
-                  <label><input type="checkbox" name="industry" value="Tech"> Tech</label><br>
-                  <label><input type="checkbox" name="industry" value="Healthcare"> Healthcare</label><br>
-                  <label><input type="checkbox" name="industry" value="Finance"> Finance</label>
                   <!-- Add other options here -->
                 </fieldset><br>
               
-                <!-- Fields for areasOfResponsibility, timelineForFulltime, etc. -->
+                <label for="timeline">Timeline for getting started:</label>
+                <select id="timeline" name="timeline" required>
+                <option value="">Select timeline</option></select><br>
+                
               
                 <input type="submit" value="Submit">
               

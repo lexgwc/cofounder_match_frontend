@@ -31,20 +31,39 @@ async function fetchSchools() {
 // fetch industry interests from backend
 
 async function fetchIndustryInterests() {
-try {
-    const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/industries');
-    const industryInterests = response.data;
-    const industrySelect = document.getElementById('industry');
-    industryInterests.forEach(industry => {
-        const option = document.createElement('option');
-        option.value = industry; // Assuming the array consists of string values
-        option.textContent = industry;
-        industrySelect.appendChild(option);
-    });
-    console.log('Fetched industry interests:', industryInterests);
-} catch (error) {
-    console.error('There was a problem fetching the industry interests:', error);
-}
+    try {
+        // Fetching the industry interests from the backend
+        const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/industries');
+        const industryInterests = response.data;
+        
+        // Getting the fieldset element by its ID
+        const industryFieldset = document.getElementById('industryFieldset');
+        
+        // Clearing existing checkboxes before adding new ones
+        industryFieldset.innerHTML = '<legend>Industry Interests:</legend>';
+        
+        // Iterating through the fetched industries and creating checkboxes for each
+        industryInterests.forEach(industry => {
+            // Creating the label element
+            const label = document.createElement('label');
+            label.textContent = industry;
+            
+            // Creating the checkbox input element
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.name = 'industry';
+            checkbox.value = industry;
+            
+            // Appending the checkbox to the label, then adding a line break, and finally appending the label to the fieldset
+            label.insertBefore(checkbox, label.firstChild); // Insert checkbox before the label text
+            industryFieldset.appendChild(label);
+            industryFieldset.appendChild(document.createElement('br')); // Adding a break line for spacing
+        });
+        
+        console.log('Fetched industry interests:', industryInterests);
+    } catch (error) {
+        console.error('There was a problem fetching the industry interests:', error);
+    }
 }
 
 
@@ -71,21 +90,41 @@ try {
 // fetch responsibilities from backend
 
 async function fetchResponsibilities() {
-try {
-    const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/responsibilities');
-    const responsibilities = response.data;
-    const responsibilitySelect = document.getElementById('responsibilities');
-    responsibilities.forEach(responsibility => {
-        const option = document.createElement('option');
-        option.value = responsibility; // Assuming the array consists of string values
-        option.textContent = responsibility;
-        responsibilitySelect.appendChild(option);
-    });
-    console.log('Fetched responsibilities:', responsibilities);
-} catch (error) {
-    console.error('There was a problem fetching the responsibilities:', error);
+    try {
+        // Fetching responsibilities from the backend
+        const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/responsibilities');
+        const responsibilities = response.data;
+        
+        // Getting the fieldset element by its ID
+        const responsibilitiesFieldset = document.getElementById('responsibilitiesFieldset');
+        
+        // Clearing existing checkboxes before adding new ones
+        responsibilitiesFieldset.innerHTML = '<legend>Areas you can be responsible for in a business:</legend>';
+        
+        // Iterating through the fetched responsibilities and creating checkboxes for each
+        responsibilities.forEach(responsibility => {
+            // Creating the checkbox input element
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.name = 'responsibility';
+            checkbox.value = responsibility;
+
+            // Creating the label element and appending the checkbox and responsibility text to it
+            const label = document.createElement('label');
+            label.appendChild(checkbox);
+            label.appendChild(document.createTextNode(` ${responsibility}`)); // Adding text next to checkbox
+            
+            // Appending the label to the fieldset and adding a line break for spacing
+            responsibilitiesFieldset.appendChild(label);
+            responsibilitiesFieldset.appendChild(document.createElement('br'));
+        });
+        
+        console.log('Fetched responsibilities:', responsibilities);
+    } catch (error) {
+        console.error('There was a problem fetching the responsibilities:', error);
+    }
 }
-}
+
 
 // fetch ideas from backend
 
