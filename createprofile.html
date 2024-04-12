@@ -8,6 +8,9 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./createprofile.js"></script>
     <link rel="stylesheet" href="createprofile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -55,31 +58,45 @@
                   <legend>Industry Interests:</legend>
                   <label><input type="checkbox" name="industry" value="Tech"> Tech</label><br>
                   <label><input type="checkbox" name="industry" value="Healthcare"> Healthcare</label><br>
-                  <label><input type="checkbox" name="industry" value="Finance"> Finance</label><br>
+                  <label><input type="checkbox" name="industry" value="Finance"> Finance</label>
                   <!-- Add other options here -->
                 </fieldset><br>
               
                 <label>Are You Technical?</label>
                 <input type="radio" id="isTechnicalYes" name="isTechnical" value="true" required> Yes
-                <input type="radio" id="isTechnicalNo" name="isTechnical" value="false"> No<br><br>
+                <input type="radio" id="isTechnicalNo" name="isTechnical" value="false"> No<br>
               
                 <label for="linkedinURL">LinkedIn URL:</label>
-                <input type="url" id="linkedinURL" name="linkedinURL"><br><br>
+                <input type="url" id="linkedinURL" name="linkedinURL"><br>
               
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
+                <input type="email" id="email" name="email" required><br>
               
                 <label for="location">Location:</label>
-                <input type="text" id="location" name="location"><br><br>
+                <input type="text" id="location" name="location"><br>
               
                 <label for="aboutMe">About Me:</label>
-                <textarea id="aboutMe" name="aboutMe" required></textarea><br><br>
-              
+                <textarea id="aboutMe" name="aboutMe" placeholder="e.g.  Hi! My name is Alexa. I spent 3 years at Bain and Company in New York, before moving to a role as Director of Strategy at a fast-growing personal care startup. In between, I co-founded a social gathering startup that facilitated 40+ events with 1000+ signups, and also worked on the early team at a femtech startup that created custom-fit 3D printed bras.
+
+                I am a strategic thinker with an instinct for the economics of business, and I have deep experience working cross-functionally across fast-growing startups. Last year I pitched over 50 VCs, so I understand what fundraising is like in the current market and what investors are looking for. I am focused on ideas that have good economics, and understand how to identify this upfront." required></textarea><br>
+
                 <label for="education">Education:</label>
-                <textarea id="education" name="education" required></textarea><br><br>
+                <textarea id="education" name="education" placeholder="e.g. Brown University, Bachelor of Arts (B.A.) in Political Science" required></textarea><br>
               
                 <label for="employmentHistory">Employment History:</label>
-                <textarea id="employmentHistory" name="employmentHistory" required></textarea><br><br>
+                <textarea id="employmentHistory" name="employmentHistory" placeholder="Athena Club, Director of Strategy, 2023 - present
+                Athena Club, Strategic Projects Manager, 2022 - 2023
+                Braave, Business Development | Extern, 2021 - 2022
+                Bain & Company, Senior Associate Consultant, 2021 - 2022
+                CREW NY, Founder, 2021 - 2022
+                Bain & Company, Associate Consultant, 2019 - 2021
+                Bain & Company, Associate Consultant Intern, 2018 - 2019" required></textarea><br>
+
+                <label for="cofounderQualities">What are you looking for in a cofounder?</label>
+                <textarea id="cofounderQualities" name="cofounderQualities" required></textarea><br>
+
+                <label for="impressiveAccomplishment">Brag about an impressive accomplishment!</label>
+                <textarea id="impressiveAccomplishment" name="impressiveAccomplishment" required></textarea><br>
               
                 <!-- Additional fields like gender, schedulingURL, etc., can follow the same pattern -->
               
@@ -87,7 +104,18 @@
                 <select id="hasIdea" name="hasIdea" required>
                   <option value="Committed to an idea">Committed to an idea</option>
                   <!-- Add other options here -->
-                </select><br><br>
+                </select><br>
+
+                <label for="idea">Share a bit about the business ideas you're thinking of:</label>
+                <textarea id="idea" name="idea" required></textarea><br>
+
+                <fieldset>
+                  <legend>Areas you can be responsible for in a business:</legend>
+                  <label><input type="checkbox" name="industry" value="Tech"> Tech</label><br>
+                  <label><input type="checkbox" name="industry" value="Healthcare"> Healthcare</label><br>
+                  <label><input type="checkbox" name="industry" value="Finance"> Finance</label>
+                  <!-- Add other options here -->
+                </fieldset><br>
               
                 <!-- Fields for areasOfResponsibility, timelineForFulltime, etc. -->
               

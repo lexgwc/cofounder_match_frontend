@@ -10,6 +10,7 @@
   height: 100vh;
   background-color: rgb(21, 3, 40);
   color: #555;
+  font-family: 'Poppins', sans-serif;
 }
 
 .title {
@@ -21,6 +22,7 @@
   justify-content: space-between; /* Aligns items to the main axis */
   align-items: center; /* Aligns items to the cross axis */
   flex-wrap: wrap; /* Allows items to wrap if needed */
+  font-family: 'Poppins', sans-serif;
 }
 
 .title nav a {
