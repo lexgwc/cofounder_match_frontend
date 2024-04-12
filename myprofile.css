@@ -8,7 +8,8 @@
     "profile profile profile"
     "profile profile profile";
   height: 100vh;
-  background-color: rgb(236, 235, 237);
+  background-color: rgb(21, 3, 40);;
+  color: #555;
 }
 
 .title {
@@ -61,11 +62,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 10px;
   background-color: #fff; /* Light background to make the content pop */
   border-radius: 8px; /* Soft rounded corners for a modern look */
   margin: 20px;
-  text-align: center; /* Center-align the text for the message */
 }
 
 #profile-container p {

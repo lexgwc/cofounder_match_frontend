@@ -1,0 +1,101 @@
+.container {  display: grid;
+  grid-template-columns: 1.9fr 0.1fr 1fr;
+  grid-template-rows: 0.3fr 1.7fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "title title title"
+    "profile profile profile"
+    "profile profile profile";
+  height: 100vh;
+  background-color: rgb(21, 3, 40);
+  color: #555;
+}
+
+.title {
+  margin: 10px 0 2px 0;
+  grid-area: title; 
+  background-color: white;
+  position: sticky;
+  display: flex;
+  justify-content: space-between; /* Aligns items to the main axis */
+  align-items: center; /* Aligns items to the cross axis */
+  flex-wrap: wrap; /* Allows items to wrap if needed */
+}
+
+.title nav a {
+  text-decoration: none;
+  color: #5047B6;
+  margin-left: 20px; /* Adds space between links */
+  margin-right: 20px; /* Adds space between links */
+  font-size: 14px;
+}
+
+.title nav a:hover {
+  text-decoration: underline;
+}
+
+.profile {
+  grid-area: profile; 
+  font-size: 14px;
+  margin: 20px 20px 0 20px; 
+  width: 80%;
+  justify-self: center;
+  max-height: 90vh;
+  line-height: 23px;
+  background-color: #fff; 
+  padding: 20px; 
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  overflow-y: auto;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0px;
+  background-color: #f4f4f4;
+}
+
+form {
+  display: grid;
+  grid-gap: 0px; 
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+/* Input and textarea styling */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%; /* Full width of the container */
+  padding: 0px;
+  margin-bottom: 0px; /* Space below each input */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 100px;
+  resize: vertical;
+}
+
+
+input[type="submit"] {
+  background-color: #9885FE; 
+  color: #ffffff; 
+  border: none; 
+  border-radius: 4px; 
+  padding: 10px 20px;
+  cursor: pointer; 
+  font-size: 16px; 
+  transition: background-color 0.3s ease;
+}
+
+
+input[type="submit"]:hover {
+  background-color: #7465D9;
+}

@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./createprofile.js"></script>
+    <link rel="stylesheet" href="createprofile.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">
+            <img src="./assets/logo-name-slogan.png" alt="CofounderConnectr" style="height: 60px; margin: 30px">
+            <nav>
+                <a href="/homepage.html" style="margin-right: 20px;">Browse Profiles</a>
+                <a href="/myprofile.html" style="margin-right: 20px;">My Profile</a>
+                <a href="/favorites">Favorites</a>
+            </nav>
+        </div>
+        <div class="profile">
+            <div id="form-container">
+              <h2>Create Profile</h2>
+              <form action="/createprofile" method="post">
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                <!-- Placeholder for userId, assuming it's handled programmatically or through session -->
+                <label for="school">School:</label>
+                <select id="school" name="school" required>
+                <option value="">Select School</option></select><br>
+                
+              
+                <label for="birthdate">Birthdate:</label>
+                <input type="date" id="birthdate" name="birthdate" required><br>
+              
+                <label for="programType">Program Type:</label>
+                <select id="programType" name="programType" required>
+                <option value="">Select Program Type</option>
+                <option value="Business">Business</option>
+                <option value="Law">Law</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Medicine">Medicine</option>
+                <option value="Education">Education</option>
+                <option value="Sustainability">Sustainability</option>
+                <option value="Humanities and Sciences">Humanities and Sciences</option>
+                <option value="Other">Other</option></select>
+                <br>
+              
+                <label for="industryInterests">Industry Interests:</label>
+                <select id="industryInterests" name="industryInterests" multiple required>
+                  <option value="">Select Industry Interests</option>
+                  <!-- Add other options here -->
+                </select><br>
+              
+                <label>Is Technical:</label>
+                <input type="radio" id="isTechnicalYes" name="isTechnical" value="true" required> Yes
+                <input type="radio" id="isTechnicalNo" name="isTechnical" value="false"> No<br><br>
+              
+                <label for="linkedinURL">LinkedIn URL:</label>
+                <input type="url" id="linkedinURL" name="linkedinURL"><br><br>
+              
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+              
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location"><br><br>
+              
+                <label for="aboutMe">About Me:</label>
+                <textarea id="aboutMe" name="aboutMe" required></textarea><br><br>
+              
+                <label for="education">Education:</label>
+                <textarea id="education" name="education" required></textarea><br><br>
+              
+                <label for="employmentHistory">Employment History:</label>
+                <textarea id="employmentHistory" name="employmentHistory" required></textarea><br><br>
+              
+                <!-- Additional fields like gender, schedulingURL, etc., can follow the same pattern -->
+              
+                <label for="hasIdea">Has Idea:</label>
+                <select id="hasIdea" name="hasIdea" required>
+                  <option value="Committed to an idea">Committed to an idea</option>
+                  <!-- Add other options here -->
+                </select><br><br>
+              
+                <!-- Fields for areasOfResponsibility, timelineForFulltime, etc. -->
+              
+                <input type="submit" value="Submit">
+              
+              </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
