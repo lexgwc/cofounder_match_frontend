@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
   console.log('DOM loaded and parsed');
   fetchSchools()
@@ -154,7 +155,7 @@ try {
 async function createProfile() {
 
     const form = document.querySelector('form');
-    const formData = new FormData(form);
+    
 
     // get token from local storage
     const token = localStorage.getItem('token');
@@ -166,20 +167,44 @@ async function createProfile() {
     const config = {
         headers: {
             'Authorization': `Bearer ${token}`,
-            'Content-Type': 'multipart/form-data' // This line needs to be inside the headers object
+            'Content-Type': null // This line needs to be inside the headers object
         }
     }
 
-    //add current UserId to profile
+    const originalFormData = new FormData(form);
+
+    // Create a new FormData object for the final data
+    const formData = new FormData();
+
+    // First append the userId
     formData.append('userId', userId);
-    for (let [key, value] of formData.entries()) {
-        console.log(`${key}: ${value}`);
-    };
+
+
+// Then append all other form data entries
+for (let [key, value] of originalFormData.entries()) {
+    formData.append(key, value);
+}
+
+    
+    // for (let [key, value] of formData.entries()) {
+    //     console.log(`${key}: ${value}`);
+    // };
+
+    let object = {};
+    formData.forEach((value, key) => {
+    object[key] = value;
+    });
+    const json = JSON.stringify(object)
+    console.log(json);
     // Preparing the data for the POST request
     // Note: FormData will be directly passed to axios, as axios handles FormData automatically
     try {
         // TODO: replace with heroku
-        const response = await axios.post('http://localhost:3000/cofounders/profile', formData, config);
+        const response = await axios.post('http://localhost:3000/cofounders/profile', json, {
+            headers: {
+                'Content-Type': 'application/json','Authorization': `Bearer ${token}`
+            }
+        });
         console.log('Profile created successfully:', response.data);
         alert('Profile created successfully!');
     } catch (error) {
@@ -187,4 +212,49 @@ async function createProfile() {
         alert('There was a problem creating the profile. Please try again later.');
     }
 }
+
+// async function createProfile() {
+//     const form = document.querySelector('form');
+    
+//     // Get token from local storage
+//     const token = localStorage.getItem('token');
+//     console.log(`token: ${token}`);
+//     const payload = JSON.parse(atob(token.split('.')[1])); // Decode payload of JWT
+//     console.log(payload);
+//     const userId = payload.id;
+//     console.log(`Log userId: ${userId}`);
+
+//     const formData = new FormData(form);
+
+//     // Append the userId to the FormData
+//     formData.append('userId', userId);
+
+//     // Log each formData entry for debugging
+//     for (let [key, value] of formData.entries()) {
+//         console.log(`${key}: ${value}`);
+//     };
+
+//     // Preparing the data for the POST request
+//     try {
+//         const response = await fetch('http://localhost:3000/cofounders/profile', {
+//             method: 'POST',
+//             body: formData,
+//             headers: {
+//                 'Authorization': `Bearer ${token}`
+//                 // Do not set Content-Type for FormData; fetch does this automatically
+//             }
+//         });
+
+//         if (!response.ok) {
+//             throw new Error(`HTTP error! status: ${response.status}`);
+//         }
+
+//         const data = await response.json();
+//         console.log('Profile created successfully:', data);
+//         alert('Profile created successfully!');
+//     } catch (error) {
+//         console.error('There was a problem creating the profile:', error);
+//         alert('There was a problem creating the profile. Please try again later.');
+//     }
+// }
 
