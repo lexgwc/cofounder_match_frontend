@@ -1,12 +1,9 @@
 // This script fetches the user's profile from the server and displays it on the page.
 
-document.addEventListener('DOMContentLoaded', async (event) => { // Make the function async
+document.addEventListener('DOMContentLoaded', async (event) => { 
   const token = localStorage.getItem('token');
-  console.log(`token: ${token}`);
-  const payload = JSON.parse(atob(token.split('.')[1])); // Decode payload of JWT
-  console.log(payload);
+  const payload = JSON.parse(atob(token.split('.')[1])); 
   const userId = payload.id;
-  console.log(`userId: ${userId}`);
   if (!userId) {
     displayNoProfileMessage();
     return;
@@ -18,7 +15,6 @@ document.addEventListener('DOMContentLoaded', async (event) => { // Make the fun
   try {
     const response = await axios.get(`https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/profile`, config);
     const profile = response.data;
-    console.log(profile);
     if (profile.length > 0) {
       displayProfile(profile);
     } else {
@@ -30,9 +26,7 @@ document.addEventListener('DOMContentLoaded', async (event) => { // Make the fun
 });
 
 function displayNoProfileMessage() {
-  console.log('No profile found. Create a profile?');
   const profileContainer = document.getElementById('profile-container');
-  // Ensure the container is cleared before adding new content
   profileContainer.innerHTML = '';
 
   const newProfileButton = document.createElement('button');
@@ -51,8 +45,6 @@ function displayNoProfileMessage() {
 
 function displayProfile(profile) {
   const myProfile = profile[0];
-  console.log('Displaying profile:', profile);
-  console.log(myProfile.ideasInterestedIn);
 
   const profileContainer = document.getElementById('profile-container')
   profileContainer.innerHTML = `
@@ -86,21 +78,18 @@ function displayProfile(profile) {
   <strong>Email:</strong> ${myProfile.email}<br>
   <strong>Scheduling URL:</strong> <a href="${myProfile.schedulingURL}" target="_blank">${myProfile.schedulingURL}</a><br>`
 
-  // Create Edit Profile Button
   const editButton = document.createElement('button');
   editButton.textContent = 'Edit Profile';
   editButton.id = 'edit-profile';
   editButton.style.margin = '10px';
-  editButton.addEventListener('click', editProfile); // Ensure you have an editProfile function or handle it
+  editButton.addEventListener('click', editProfile); 
 
-  // Create Delete Profile Button
   const deleteButton = document.createElement('button');
   deleteButton.textContent = 'Delete Profile';
   deleteButton.id = 'delete-profile';
   deleteButton.style.margin = '10px';
   deleteButton.addEventListener('click', deleteProfile);
 
-  // Append buttons to the profile container
   profileContainer.appendChild(editButton);
   profileContainer.appendChild(deleteButton)
 }
@@ -112,7 +101,6 @@ async function deleteProfile() {
   };
   try {
     const response = await axios.delete(`https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/profile`, config);
-    console.log(response.data);
     window.location.href = '/createprofile.html';
   } catch (error) {
     console.error('Error:', error);
@@ -120,7 +108,6 @@ async function deleteProfile() {
 }
 
 function editProfile() {
-  // Navigate to edit profile page or handle the edit logic here
-  window.location.href = '/editprofile.html'; // Update this URL as per your application's route
+  window.location.href = '/editprofile.html'; 
 }
 

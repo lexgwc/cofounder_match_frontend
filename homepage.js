@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded and parsed');
     fetchSchools()
     fetchIndustryInterests()
     fetchTimelines()
@@ -8,8 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add event listener for form submission
     document.querySelector('form').addEventListener('submit', function(event) {
-      console.log('button clicked')
-      event.preventDefault(); // Prevent the form from submitting the traditional way
+      event.preventDefault(); 
       findCofounders();
     });
   });
@@ -27,8 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
             option.textContent = school.schoolName; 
             schoolSelect.appendChild(option);
         });
-        // Process the fetched schools data here
-        console.log('Fetched schools:', schools);
     } catch (error) {
         console.error('There was a problem fetching the schools:', error);
     }
@@ -44,11 +40,10 @@ async function fetchIndustryInterests() {
       const industrySelect = document.getElementById('industry');
       industryInterests.forEach(industry => {
           const option = document.createElement('option');
-          option.value = industry; // Assuming the array consists of string values
+          option.value = industry; 
           option.textContent = industry;
           industrySelect.appendChild(option);
       });
-      console.log('Fetched industry interests:', industryInterests);
   } catch (error) {
       console.error('There was a problem fetching the industry interests:', error);
   }
@@ -64,11 +59,10 @@ async function fetchTimelines() {
       const timelineSelect = document.getElementById('timeline');
       timelines.forEach(timeline => {
           const option = document.createElement('option');
-          option.value = timeline; // Assuming the array consists of string values
+          option.value = timeline; 
           option.textContent = timeline;
           timelineSelect.appendChild(option);
       });
-      console.log('Fetched timelines:', timelines);
   } catch (error) {
       console.error('There was a problem fetching the timelines:', error);
   }
@@ -84,11 +78,10 @@ async function fetchResponsibilities() {
       const responsibilitySelect = document.getElementById('responsibilities');
       responsibilities.forEach(responsibility => {
           const option = document.createElement('option');
-          option.value = responsibility; // Assuming the array consists of string values
+          option.value = responsibility; 
           option.textContent = responsibility;
           responsibilitySelect.appendChild(option);
       });
-      console.log('Fetched responsibilities:', responsibilities);
   } catch (error) {
       console.error('There was a problem fetching the responsibilities:', error);
   }
@@ -103,11 +96,10 @@ async function fetchIdeas() {
       const ideaSelect = document.getElementById('idea');
       ideas.forEach(idea => {
           const option = document.createElement('option');
-          option.value = idea; // Assuming the array consists of string values
+          option.value = idea; 
           option.textContent = idea;
           ideaSelect.appendChild(option);
       });
-      console.log('Fetched ideas:', ideas);
   } catch (error) {
       console.error('There was a problem fetching the ideas:', error);
   }
@@ -126,7 +118,6 @@ async function findCofounders() {
       hasIdea: formData.get('idea'),
       isTechnical: formData.get('isTechnical')
   };
-  console.log('Form data:', data);
 
   const token = localStorage.getItem('token');
   if (!token) {
@@ -141,11 +132,9 @@ async function findCofounders() {
         }
       const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/profile',config);
       const cofounders = response.data;
-      // Clear existing cofounder list
       const cofounderList = document.getElementById('cofounder-list').querySelector('ul');
       cofounderList.innerHTML = '';
       
-      // Append new cofounders to the list
       cofounders.forEach(cofounder => {
         const li = document.createElement('li');
         li.style.position = "relative";
@@ -157,15 +146,12 @@ async function findCofounders() {
         li.style.borderRadius = "8px";
         li.style.backgroundColor = "white";
     
-        // Assuming cofounder object follows the schema structure provided
-        // Name and basic info
         const name = document.createElement('h3');
         name.textContent = cofounder.name;
         name.style.padding = "20px";
         name.style.margin = "0px";
         li.appendChild(name);
     
-        // Other details
         const details = document.createElement('p');
         details.classList.add('profile-detail');
         details.innerHTML = `
@@ -198,8 +184,7 @@ async function findCofounders() {
             <strong>Email:</strong> ${cofounder.email}<br>
             <strong>Scheduling URL:</strong> <a href="${cofounder.schedulingURL}" target="_blank">${cofounder.schedulingURL}</a><br>
         `;
-            // <strong>Location:</strong> ${cofounder.location}<br>
-            // <strong>Gender:</strong> ${cofounder.gender}<br>
+      
         li.appendChild(details);
     
         cofounderList.appendChild(li);
@@ -209,7 +194,6 @@ async function findCofounders() {
         li.appendChild(favButton)
     })
 
-      console.log('Fetched cofounders:', cofounders);
   } catch (error) {
       console.error('There was a problem fetching the cofounders:', error);
   }
