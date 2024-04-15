@@ -85,5 +85,42 @@ function displayProfile(profile) {
 
   <strong>Email:</strong> ${myProfile.email}<br>
   <strong>Scheduling URL:</strong> <a href="${myProfile.schedulingURL}" target="_blank">${myProfile.schedulingURL}</a><br>`
+
+  // Create Edit Profile Button
+  const editButton = document.createElement('button');
+  editButton.textContent = 'Edit Profile';
+  editButton.id = 'edit-profile';
+  editButton.style.margin = '10px';
+  editButton.addEventListener('click', editProfile); // Ensure you have an editProfile function or handle it
+
+  // Create Delete Profile Button
+  const deleteButton = document.createElement('button');
+  deleteButton.textContent = 'Delete Profile';
+  deleteButton.id = 'delete-profile';
+  deleteButton.style.margin = '10px';
+  deleteButton.addEventListener('click', deleteProfile);
+
+  // Append buttons to the profile container
+  profileContainer.appendChild(editButton);
+  profileContainer.appendChild(deleteButton)
+}
+
+async function deleteProfile() {
+  const token = localStorage.getItem('token');
+  const config = {
+    headers: { 'Authorization': `Bearer ${token}` }
+  };
+  try {
+    const response = await axios.delete(`http://localhost:3000/cofounders/profile`, config);
+    console.log(response.data);
+    window.location.href = '/createprofile.html';
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+function editProfile() {
+  // Navigate to edit profile page or handle the edit logic here
+  window.location.href = '/editprofile.html'; // Update this URL as per your application's route
 }
 

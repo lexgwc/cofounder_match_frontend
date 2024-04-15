@@ -49,6 +49,10 @@
   border-radius: 10px; /* Optional: rounded corners for the profile container */
   box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Add shadow for depth */
   overflow-y: auto;
+  display: flex; /* Added to use Flexbox */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center;
 }
 
 body {
@@ -88,4 +92,16 @@ body {
 
 #profile-container button:hover {
   background-color: #7465D9;; /* Darken button on hover for interaction feedback */
+}
+
+button {
+  right: 0px;
+  bottom: 10px;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #9885FE; /* Example color, adjust as needed */
+  color: white;
+  cursor: pointer;
 }
