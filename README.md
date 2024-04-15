@@ -2,6 +2,10 @@
 
 Cofounder Connectr is a web application designed to help entrepreneurs find and connect with potential cofounders on their school's campus. The platform allows users to create profiles, search for potential cofounders based on skill sets and interests, and initiate conversations.
 
+## Logo
+
+- https://imgur.com/9XmlLSw 
+
 ## Features
 
 - **User Profiles:** Users can create detailed profiles including their skills, past experiences, and the types of projects they are interested in. They can also update and delete profiles.
@@ -16,6 +20,7 @@ Cofounder Connectr is a web application designed to help entrepreneurs find and 
 ## Getting Started
 
 - Find the deployed link here: https://cofounder-match-frontend-v1.vercel.app/
+- Find the trello board here: https://trello.com/b/VCTYZAB1/cofounder-matching-men-stack 
 - Instructions:
   -  On the homepage, click sign up to create an account, or login if you already have an account.
   - Sign up or login. You will then be redirected to the app's homepage.
@@ -37,6 +42,10 @@ Cofounder Connectr is a web application designed to help entrepreneurs find and 
 | Saturday  | - Work on stretch goals  |     N     |       |
 | Sunday    | - Finalize styling and UI adjustments; - Continue testing and bug fixing; |     Y     |       |
 | Monday    | - Prepare presentation and demo; |
+
+## Attributions: ##
+
+- looka.com - free AI logo generator
 
 ## Next Steps/Planned Future Features
 - **Favorites:** Save profiles to favorites to review later
