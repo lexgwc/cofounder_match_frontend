@@ -152,7 +152,7 @@ async function findCofounders() {
         li.style.padding = "10px";
         li.style.border = "1px solid #ddd";
         li.style.color = '#555';
-        li.style.marginBottom = "10px";
+        li.style.marginBottom = "30px";
         li.style.listStyleType = "none";
         li.style.borderRadius = "8px";
         li.style.backgroundColor = "white";

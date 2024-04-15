@@ -1,0 +1,206 @@
+
+
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./createprofile.js"></script>
+    <link rel="stylesheet" href="createprofile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">
+            <img src="./assets/logo-name-slogan.png" alt="CofounderConnectr" style="height: 60px; margin: 30px">
+            <nav>
+                <a href="/homepage.html" style="margin-right: 20px;">Browse Profiles</a>
+                <a href="/myprofile.html" style="margin-right: 20px;">My Profile</a>
+                <a href="/favorites">Favorites</a>
+            </nav>
+        </div>
+        <div class="profile">
+            <div id="form-container">
+              <h2>Create Profile</h2>
+              <p>Welcome! Let's get your profile set up. This information will be visible by others looking to connect with you on campus.</p>
+              <hr>
+              <form action="/createprofile" method="post">
+
+                <!-- User ID is assumed to be handled programmatically or through session -->
+                <label for="name">Full name:</label>
+                <input type="text" id="name" name="name" ><br>
+            
+                <label for="birthdate">Birthdate:</label>
+                <input type="date" id="birthdate" name="birthdate" ><br>
+            
+                <label for="currentSchool">School:</label>
+                <select id="currentSchool" name="currentSchool" >
+                    <option value="">Select School</option>
+                </select><br>
+            
+                <label for="programType">Program Type:</label>
+                <select id="programType" name="programType" >
+                    <option value="">Select Program Type</option>
+                    <option value="Business">Business</option>
+                    <option value="Law">Law</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Medicine">Medicine</option>
+                    <option value="Education">Education</option>
+                    <option value="Sustainability">Sustainability</option>
+                    <option value="Humanities and Sciences">Humanities and Sciences</option>
+                    <option value="Other">Other</option>
+                </select><br>
+            
+                <fieldset id="industryFieldset">
+                    <legend>Industry Interests:</legend>
+                    <!-- Add other options here -->
+                </fieldset><br>
+            
+                <label>Are You Technical?</label>
+                <input type="radio" id="isTechnicalYes" name="isTechnical" value="true" > Yes
+                <input type="radio" id="isTechnicalNo" name="isTechnical" value="false"> No<br>
+            
+                <label for="linkedinURL">LinkedIn URL:</label>
+                <input type="url" id="linkedinURL" name="linkedinURL"><br>
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" ><br>
+            
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location"><br>
+            
+                <label for="aboutMe">About Me:</label>
+                <textarea id="aboutMe" name="aboutMe" placeholder="e.g.  Hi! My name is Alexa. I spent 3 years at Bain and Company in New York, before moving to a role as Director of Strategy at a fast-growing personal care startup. In between, I co-founded a social gathering startup that facilitated 40+ events with 1000+ signups, and also worked on the early team at a femtech startup that created custom-fit 3D printed bras...." ></textarea><br>
+            
+                <label for="education">Education:</label>
+                <textarea id="education" name="education" placeholder="e.g. Brown University, Bachelor of Arts (B.A.) in Political Science" ></textarea><br>
+            
+                <label for="employmentHistory">Employment History:</label>
+                <textarea id="employmentHistory" name="employmentHistory" placeholder="e.g. Athena Club, Director of Strategy, 2022 - 2024 |Braave, Business Development Extern, 2021 - 2022 | Bain & Company, Senior Associate Consultant, 2019 - 2022 | CREW NY, Founder, 2021 - 2022" ></textarea><br>
+            
+                <label for="schedulingURL">Scheduling URL:</label>
+                <input type="url" id="schedulingURL" name="schedulingURL"><br>
+            
+                <label for="idea">Do You Have A Business Idea Yet?:</label>
+                <select id="idea" name="hasIdea" >
+                    <option value="">Select idea status</option>
+                    <!-- Add other options here -->
+                </select><br>
+            
+                <label for="ideasInterestedIn">Share a bit about the business ideas you're thinking of:</label>
+                <textarea id="ideasInterestedIn" name="ideasInterestedIn" ></textarea><br>
+            
+                <fieldset id="responsibilitiesFieldset">
+                    <legend>Areas you can be responsible for in a business:</legend>
+                    <!-- Add other options here -->
+                </fieldset><br>
+            
+                <label for="timelineForFulltime">Timeline for getting started:</label>
+                <select id="timelineForFulltime" name="timelineForFulltime" >
+                    <option value="">Select timeline</option>
+                </select><br>
+            
+                <label for="cofounderDesiredQualities">What are you looking for in a cofounder?</label>
+                <textarea id="cofounderDesiredQualities" name="cofounderDesiredQualities" ></textarea><br>
+            
+                <label for="impressiveAccomplishment">Brag about an impressive accomplishment!</label>
+                <textarea id="impressiveAccomplishment" name="impressiveAccomplishment" ></textarea><br>
+
+                <input type="submit" value="Submit"><br>
+            
+            </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+            
+<!-- <form action="/createprofile" method="post">
+
+  <label for="name">Full name:</label>
+  <input type="text" id="name" name="name" ><br>
+ 
+  <label for="currentSchool">School:</label>
+  <select id="currentSchool" name="currentSchool" >
+  <option value="6615ac484948249feac53e2b">Select School</option></select><br>
+  
+
+  <label for="birthdate">Birthdate:</label>
+  <input type="date" id="birthdate" name="birthdate" ><br>
+
+  <label for="programType">Program Type:</label>
+  <select id="programType" name="programType" >
+  <option value="">Select Program Type</option>
+  <option value="Business">Business</option>
+  <option value="Law">Law</option>
+  <option value="Engineering">Engineering</option>
+  <option value="Medicine">Medicine</option>
+  <option value="Education">Education</option>
+  <option value="Sustainability">Sustainability</option>
+  <option value="Humanities and Sciences">Humanities and Sciences</option>
+  <option value="Other">Other</option></select>
+  <br>
+
+  <fieldset id="industryFieldset">
+    <legend>Industry Interests:</legend>
+    
+  </fieldset><br>
+
+  <label>Are You Technical?</label>
+  <input type="radio" id="isTechnicalYes" name="isTechnical" value="true" > Yes
+  <input type="radio" id="isTechnicalNo" name="isTechnical" value="false"> No<br>
+
+  <label for="linkedinURL">LinkedIn URL:</label>
+  <input type="url" id="linkedinURL" name="linkedinURL"><br>
+
+  <label for="schedulingURL">Scheduling URL:</label>
+  <input type="url" id="schedulingURL" name="schedulingURL"><br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" ><br>
+
+  <label for="location">Location:</label>
+  <input type="text" id="location" name="location"><br>
+
+  <label for="aboutMe">About Me:</label>
+  <textarea id="aboutMe" name="aboutMe" placeholder="e.g.  Hi! My name is Alexa. I spent 3 years at Bain and Company in New York, before moving to a role as Director of Strategy at a fast-growing personal care startup. In between, I co-founded a social gathering startup that facilitated 40+ events with 1000+ signups, and also worked on the early team at a femtech startup that created custom-fit 3D printed bras...." ></textarea><br>
+
+  <label for="education">Education:</label>
+  <textarea id="education" name="education" placeholder="e.g. Brown University, Bachelor of Arts (B.A.) in Political Science" ></textarea><br>
+
+  <label for="employmentHistory">Employment History:</label>
+  <textarea id="employmentHistory" name="employmentHistory" placeholder="e.g. Athena Club, Director of Strategy, 2022 - 2024 |Braave, Business Development Extern, 2021 - 2022 | Bain & Company, Senior Associate Consultant, 2019 - 2022 | CREW NY, Founder, 2021 - 2022" ></textarea><br>
+
+  <label for="cofounderDesiredQualities">What are you looking for in a cofounder?</label>
+  <textarea id="cofounderDesiredQualities" name="cofounderDesiredQualities" ></textarea><br>
+
+  <label for="impressiveAccomplishment">Brag about an impressive accomplishment!</label>
+  <textarea id="impressiveAccomplishment" name="impressiveAccomplishment" ></textarea><br>
+
+  <label for="idea">Do You Have A Business Idea Yet?:</label>
+  <select id="idea" name="hasIdea" >
+    <option value="">Select idea status</option>
+  </select><br>
+
+  <label for="ideasInterestedIn">Share a bit about the business ideas you're thinking of:</label>
+  <textarea id="ideasInterestedIn" name="ideasInterestedIn" ></textarea><br>
+
+  <fieldset id="responsibilitiesFieldset">
+    <legend>Areas you can be responsible for in a business:</legend>
+  </fieldset><br>
+
+  <label for="timelineForFulltime">Timeline for getting started:</label>
+  <select id="timelineForFulltime" name="timelineForFulltime" >
+  <option value="">Select timeline</option></select><br>
+  
+
+  <input type="submit" value="Submit">
+
+</form> -->
