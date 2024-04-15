@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // fetch schools from backend
 async function fetchSchools() {
   try {
-      const response = await axios.get('http://localhost:3000/cofounders/school');
+      const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/school');
       const schools = response.data;
       const schoolSelect = document.getElementById('currentSchool');
       schools.forEach(school => {
@@ -40,7 +40,7 @@ async function fetchSchools() {
 async function fetchIndustryInterests() {
     try {
         // Fetching the industry interests from the backend
-        const response = await axios.get('http://localhost:3000/cofounders/industries');
+        const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/industries');
         const industryInterests = response.data;
         
         // Getting the fieldset element by its ID
@@ -78,7 +78,7 @@ async function fetchIndustryInterests() {
 
 async function fetchTimelines() {
 try {
-    const response = await axios.get('http://localhost:3000/cofounders/timeline');
+    const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/timeline');
     const timelines = response.data;
     const timelineSelect = document.getElementById('timelineForFulltime');
     timelines.forEach(timeline => {
@@ -99,7 +99,7 @@ try {
 async function fetchResponsibilities() {
     try {
         // Fetching responsibilities from the backend
-        const response = await axios.get('http://localhost:3000/cofounders/responsibilities');
+        const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/responsibilities');
         const responsibilities = response.data;
         
         // Getting the fieldset element by its ID
@@ -137,7 +137,7 @@ async function fetchResponsibilities() {
 
 async function fetchIdeas() {
 try {
-    const response = await axios.get('http://localhost:3000/cofounders/idea');
+    const response = await axios.get('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/idea');
     const ideas = response.data;
     const ideaSelect = document.getElementById('idea');
     ideas.forEach(idea => {
@@ -194,7 +194,7 @@ for (let [key, value] of originalFormData.entries()) {
     // Note: FormData will be directly passed to axios, as axios handles FormData automatically
     try {
         // TODO: replace with heroku
-        const response = await axios.put('http://localhost:3000/cofounders/profile', json, {
+        const response = await axios.put('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/profile', json, {
             headers: {
                 'Content-Type': 'application/json','Authorization': `Bearer ${token}`
             }
@@ -230,7 +230,7 @@ for (let [key, value] of originalFormData.entries()) {
 
 //     // Preparing the data for the POST request
 //     try {
-//         const response = await fetch('http://localhost:3000/cofounders/profile', {
+//         const response = await fetch('https://cofounder-connect-d2057df29b96.herokuapp.com/cofounders/profile', {
 //             method: 'POST',
 //             body: formData,
 //             headers: {

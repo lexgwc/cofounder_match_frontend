@@ -9,7 +9,7 @@ function handleLogin(event) {
   event.preventDefault(); // Prevent the default form submission
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
-  axios.post('http://localhost:3000/auth/signin', { email, password })
+  axios.post('https://cofounder-connect-d2057df29b96.herokuapp.com/auth/signin', { email, password })
     .then(response => {
       const token = response.data.token; // Assume the token is in response.data.token
       if (token) {
